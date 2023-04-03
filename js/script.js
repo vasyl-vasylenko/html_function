@@ -67,3 +67,4 @@ function getMathResult(num, times) {
 }
 
 getMathResult(10, 5);
+console.log(getMathResult);
