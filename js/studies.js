@@ -87,12 +87,13 @@
 
 // console.log(getCoupeNumber(5));
 
+// *************Урок 29. Практика JS*****************//
 
 // Создайте функцию, которая принимает в себя целое число минут и возвращает время в нужном формате строки. (Смотри пример). Обратите внимание на окончание слова "час" - оно меняется в зависимости от цифры. Если вместо аргумента приходит не число, дробное или отрицательное число - функция возвращает строку "Ошибка, проверьте данные"
 function getTimeFromMinutes(timeNumber) {
 
     if (typeof(timeNumber) !== 'number' || timeNumber < 0 || !Number.isInteger(timeNumber)){
-        return "Ошибка. Проверьте данные"
+        return "Ошибка, проверьте данные";
     }
 
     const housr = Math.floor(timeNumber / 60);
@@ -120,3 +121,17 @@ function getTimeFromMinutes(timeNumber) {
     return (`Это ${housr} ${housrStr} и ${minutes} минут`)
  }
  console.log(getTimeFromMinutes(150));
+
+
+// Напишите функцию, которая принимает в себя 4 числа и возвращает самое большее из них. Если один из аргументов не является числом или их меньше 4 - возвращается 0. Дробные числа разрешены.
+function findMaxNumber(oneNumber, twoNumber, threeNumber, fourNumber) {
+    if (typeof(oneNumber) !== 'number' || typeof(twoNumber) !== 'number' || typeof(threeNumber) !== 'number' || typeof(fourNumber) !== 'number'){
+        return 0;
+    } else {
+        return Math.max(oneNumber, twoNumber, threeNumber, fourNumber) ;
+    }
+
+}
+
+console.log(findMaxNumber(4, 5, '6', 8));
+console.log(findMaxNumber(4, 5, 24, 8));
