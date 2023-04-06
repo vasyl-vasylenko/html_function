@@ -183,18 +183,21 @@ const options = {
       }
 }
 console.log(options.name);
+// Деструктуризация объекта
+const {border, bg} = options.colors;
+console.log(border);
 //delete options.name;
 // Цикл перебора
 // for (let key in options){
 //     console.log(`Свойство ${key} имеет значение ${options[key]}`);
 // }
 // Перебор внутри пеоебора
-for (let key in options){
-    if(typeof(options[key]) === 'object'){
-        for (let i in options[key]){
-        console.log(`свойство ${key} имеет значение ${options[key][i]}`);
-        }
-    } else {
-        console.log(`Свойство ${key} имеет значение ${options[key]}`);
-    }
-}
+// for (let key in options){
+//     if(typeof(options[key]) === 'object'){
+//         for (let i in options[key]){
+//         console.log(`свойство ${key} имеет значение ${options[key][i]}`);
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//     }
+// }
