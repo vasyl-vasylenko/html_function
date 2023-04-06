@@ -3,78 +3,78 @@
 
 //Фильм
 
-let numberOfFilms;
-function start(){
-    while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-        numberOfFilms = +prompt('Сколько фильмов вы смотрели?', '');
-    }
-}
-start();
+// let numberOfFilms;
+// function start(){
+//     while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+//         numberOfFilms = +prompt('Сколько фильмов вы смотрели?', '').trim();
+//     }
+// }
+// start();
 
-const personalMovieDB = {
-      count: numberOfFilms,
-      movies: {},
-      actors: {},
-      geners: [],
-      privat: false
-};
+// const personalMovieDB = {
+//       count: numberOfFilms,
+//       movies: {},
+//       actors: {},
+//       geners: [],
+//       privat: false
+// };
 
-function rememberMyFilms(){
-    for (let i = 0; i < 2; i++){
-        const a = prompt('Один из последних просмотренных фильмов', ''),
-            b = prompt('На сколько его оцените?', '');
-        if ( a != null && b != null && a != '' && b != '' && a.length < 50 ) {
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-        } else {
-            console.log('error');
-            i--;
-        }
-    }
-}
-// rememberMyFilms();
+// function rememberMyFilms(){
+//     for (let i = 0; i < 2; i++){
+//         const a = prompt('Один из последних просмотренных фильмов', ''),
+//             b = prompt('На сколько его оцените?', '');
+//         if ( a != null && b != null && a != '' && b != '' && a.length < 50 ) {
+//             personalMovieDB.movies[a] = b;
+//             console.log('done');
+//         } else {
+//             console.log('error');
+//             i--;
+//         }
+//     }
+// }
+// // rememberMyFilms();
 
-function detectPersonalLevel(){
-    if (personalMovieDB.count < 10) {
-        console.log("Вы просмотрели мало фильмов");
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log("Вы класиче аий зритель");
-    } else if (personalMovieDB.count > 30){
-        console.log("Вы кирноман");
-    }else {
-        console.log("Произошла ошибка");
-    }
-}
-// detectPersonalLevel();
+// function detectPersonalLevel(){
+//     if (personalMovieDB.count < 10) {
+//         console.log("Вы просмотрели мало фильмов");
+//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//         console.log("Вы класиче аий зритель");
+//     } else if (personalMovieDB.count > 30){
+//         console.log("Вы кирноман");
+//     }else {
+//         console.log("Произошла ошибка");
+//     }
+// }
+// // detectPersonalLevel();
 
-function showMyDB (hidden){
-    if (!hidden){
-        console.log(personalMovieDB);
-    }
-}
+// function showMyDB (hidden){
+//     if (!hidden){
+//         console.log(personalMovieDB);
+//     }
+// }
 
-showMyDB(personalMovieDB.privat);
+// showMyDB(personalMovieDB.privat);
 
-function writeYourGeners(){
-    for (let i = 1; i <= 3; i++){
-        personalMovieDB.geners[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-    }
-}
-writeYourGeners();
-function calculateVolumeAndArea(length) {
-    if (typeof (length) !== 'number' || length < 0 || !Number.isInteger(length)) {
-        return "При вычислении произошла ошибка";
-    }
-    let volume = 0,
-        area = 0;
-    volume = length * length * length;
-    // length ** 3 - это тоже самое, что и выше или варианты через цикл.
-    // ** - это оператор степени, напоминаю. Но онлайн редактор его не принимает =/
-    area = 6 * (length * length);
-    return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
-}
+// function writeYourGeners(){
+//     for (let i = 1; i <= 3; i++){
+//         personalMovieDB.geners[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+//     }
+// }
+// writeYourGeners();
+// function calculateVolumeAndArea(length) {
+//     if (typeof (length) !== 'number' || length < 0 || !Number.isInteger(length)) {
+//         return "При вычислении произошла ошибка";
+//     }
+//     let volume = 0,
+//         area = 0;
+//     volume = length * length * length;
+//     // length ** 3 - это тоже самое, что и выше или варианты через цикл.
+//     // ** - это оператор степени, напоминаю. Но онлайн редактор его не принимает =/
+//     area = 6 * (length * length);
+//     return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+// }
 
-calculateVolumeAndArea(5);
+// calculateVolumeAndArea(5);
 
 
 
@@ -145,3 +145,47 @@ calculateVolumeAndArea(5);
 
 // getMathResult(10, 5);
 // console.log(getMathResult);
+
+
+// function first(){
+//     //Do something
+//     setTimeout(function(){
+//         console.log(1);
+//     }, 500);
+// }
+
+// function second(){
+//     console.log(2);
+// }
+
+// first();
+// second();
+
+// CallBack function, вызов в контролиремой последовательности
+// function learnJS(lang, callback){
+//     console.log(`Я учу: ${lang}`);
+//     callback();
+// }
+// function done(){
+//     console.log(`Я прошел этот урок`);
+// }
+// learnJS('JavaScript', done);
+
+
+// Обьекты деструктуризация обьектов
+
+const options = {
+      name: 'test',
+      width: 1024,
+      height: 1024,
+      colors: {
+              border: 'black',
+              bg: 'red'
+      }
+}
+console.log(options.name);
+//delete options.name;
+// Цикл перебора
+for (let key in options){
+    console.log(`Свойство ${key} имеет значение ${options[key]}`);
+}
