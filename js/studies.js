@@ -1,76 +1,4 @@
 
-// let numberOfFilms;
-// function start(){
-//     while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-//         numberOfFilms = +prompt('Сколько фильмов вы смотрели?', '');
-//     }
-// }
-// start();
-
-// const personalMovieDB = {
-//       count: numberOfFilms,
-//       movies: {},
-//       actors: {},
-//       geners: [],
-//       privat: false
-// };
-
-// function rememberMyFilms(){
-//     for (let i = 0; i < 2; i++){
-//         const a = prompt('Один из последних просмотренных фильмов', ''),
-//             b = prompt('На сколько его оцените?', '');
-//         if ( a != null && b != null && a != '' && b != '' && a.length < 50 ) {
-//             personalMovieDB.movies[a] = b;
-//             console.log('done');
-//         } else {
-//             console.log('error');
-//             i--;
-//         }
-//     }
-// }
-// // rememberMyFilms();
-
-// function detectPersonalLevel(){
-//     if (personalMovieDB.count < 10) {
-//         console.log("Вы просмотрели мало фильмов");
-//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-//         console.log("Вы класиче аий зритель");
-//     } else if (personalMovieDB.count > 30){
-//         console.log("Вы кирноман");
-//     }else {
-//         console.log("Произошла ошибка");
-//     }
-// }
-// // detectPersonalLevel();
-
-// function showMyDB (hidden){
-//     if (!hidden){
-//         console.log(personalMovieDB);
-//     }
-// }
-
-// showMyDB(personalMovieDB.privat);
-
-// function writeYourGeners(){
-//     for (let i = 1; i <= 3; i++){
-//         personalMovieDB.geners[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-//     }
-// }
-// writeYourGeners();
-// function calculateVolumeAndArea(length) {
-//     if (typeof (length) !== 'number' || length < 0 || !Number.isInteger(length)) {
-//         return "При вычислении произошла ошибка";
-//     }
-//     let volume = 0,
-//         area = 0;
-//     volume = length * length * length;
-//     // length ** 3 - это тоже самое, что и выше или варианты через цикл.
-//     // ** - это оператор степени, напоминаю. Но онлайн редактор его не принимает =/
-//     area = 6 * (length * length);
-//     return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
-// }
-
-// calculateVolumeAndArea(5);
 
 
 //  Создайте функцию, которая будет вычислять объем и площадь полной поверхности куба (тоже базовая математика, иногда используется в создании анимаций). Эта функция принимает в себя целое число со значением длины ребра куба. Ответ выведите в формате строки, который изображен в примерах.
@@ -140,24 +68,24 @@
 
 //Задача с собеседований на числа Фибоначчи
 //Это одна из классических задач в программировании на самых разных языках. Скорее всего вы слышали про числа Фибоначчи, где первые два числа равны 0 и 1, а каждое последующее число равно сумме двух предыдущих чисел. И на собеседованиях часто дают задачи, связанные с этими числами. Есть разные вариации и тут мы попробуем решить одну из них.
-function fib(num) {
-    if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
-        return "";
-    }
-    let result = '';
-    let first = 0;
-    let second = 1;
-    for (let i = 0; i < num; i++) {
-        if (i + 1 === num) {
-            result += `${first}`;
-            // Без пробела в конце
-        } else {
-            result += `${first} `;
-        }
-        let third = first + second;
-        first = second;
-        second = third;
-    }
-    return console.log(result);
-}
-fib(7);
+// function fib(num) {
+//     if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+//         return "";
+//     }
+//     let result = '';
+//     let first = 1;
+//     let second = 1;
+//     for (let i = 0; i < num; i++) {
+//         if (i + 1 === num) {
+//             result += `${first}`;
+//             // Без пробела в конце
+//         } else {
+//             result += `${first} `;
+//         }
+//         let third = first + second;
+//         first = second;
+//         second = third;
+//     }
+//     return console.log(result);
+// }
+// fib(7);
