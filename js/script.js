@@ -172,8 +172,7 @@
 // learnJS('JavaScript', done);
 
 
-// Обьекты деструктуризация обьектов
-
+// Обьекты, деструктуризация обьектов
 const options = {
       name: 'test',
       width: 1024,
@@ -186,6 +185,16 @@ const options = {
 console.log(options.name);
 //delete options.name;
 // Цикл перебора
+// for (let key in options){
+//     console.log(`Свойство ${key} имеет значение ${options[key]}`);
+// }
+// Перебор внутри пеоебора
 for (let key in options){
-    console.log(`Свойство ${key} имеет значение ${options[key]}`);
+    if(typeof(options[key]) === 'object'){
+        for (let i in options[key]){
+        console.log(`свойство ${key} имеет значение ${options[key][i]}`);
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${options[key]}`);
+    }
 }
