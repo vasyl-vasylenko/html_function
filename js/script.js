@@ -173,19 +173,19 @@
 
 
 // Обьекты, деструктуризация обьектов
-const options = {
-      name: 'test',
-      width: 1024,
-      height: 1024,
-      colors: {
-              border: 'black',
-              bg: 'red'
-      }
-}
-console.log(options.name);
-// Деструктуризация объекта
-const {border, bg} = options.colors;
-console.log(border);
+// const options = {
+//       name: 'test',
+//       width: 1024,
+//       height: 1024,
+//       colors: {
+//               border: 'black',
+//               bg: 'red'
+//       }
+// }
+// console.log(options.name);
+// // Деструктуризация объекта
+// const {border, bg} = options.colors;
+// console.log(border);
 //delete options.name;
 // Цикл перебора
 // for (let key in options){
@@ -201,3 +201,23 @@ console.log(border);
 //         console.log(`Свойство ${key} имеет значение ${options[key]}`);
 //     }
 // }
+
+
+//Массивы и псевдо масивы
+const arr = [2, 3, 6, 8];
+      arr[4] = 10;
+//console.log(arr.length); //можно удодно подсчитать елементы массива, если не нарушено логика, например не сделанно arr[100] = 2, где получится 94 пустых ячейки. А свойство length добавит +1 к последнему елементу и выведет резуль 100
+//arr[100] = 2; //не верный подсчет так как свойство ltngth сделает +1 к последнему елементу и выведет результат
+//console.log(arr.length);
+//Классический перебоор массива
+// for (let i = 0; i < arr.length; i++){
+//     console.log(arr[i]);
+// }
+//Метод перебора for of
+// for (let value of arr){
+//     console.log(value);
+// }
+//Метод for Each
+arr.forEach(function(item, i, arr){
+    console.log(`${i}: ${item} внутри массива ${arr}`);
+});
