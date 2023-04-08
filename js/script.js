@@ -203,21 +203,90 @@
 // }
 
 
-//Массивы и псевдо масивы
-const arr = [2, 3, 6, 8];
-      arr[4] = 10;
-//console.log(arr.length); //можно удодно подсчитать елементы массива, если не нарушено логика, например не сделанно arr[100] = 2, где получится 94 пустых ячейки. А свойство length добавит +1 к последнему елементу и выведет резуль 100
-//arr[100] = 2; //не верный подсчет так как свойство ltngth сделает +1 к последнему елементу и выведет результат
-//console.log(arr.length);
-//Классический перебоор массива
-// for (let i = 0; i < arr.length; i++){
-//     console.log(arr[i]);
+// //Массивы и псевдомасивы
+// const arr = [2, 3, 6, 8];
+//       arr[4] = 10;
+// //console.log(arr.length); //можно удодно подсчитать елементы массива, если не нарушено логика, например не сделанно arr[100] = 2, где получится 94 пустых ячейки. А свойство length добавит +1 к последнему елементу и выведет резуль 100
+// //arr[100] = 2; //не верный подсчет так как свойство ltngth сделает +1 к последнему елементу и выведет результат
+// //console.log(arr.length);
+// //Классический перебоор массива
+// // for (let i = 0; i < arr.length; i++){
+// //     console.log(arr[i]);
+// // }
+// //Метод перебора for of
+// // for (let value of arr){
+// //     console.log(value);
+// // }
+// //Метод for Each
+// arr.forEach(function(item, i, arr){
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+// Передача по ссылке или по значению
+// const obj = {
+//     a: 5,
+//     b: 1
 // }
-//Метод перебора for of
-// for (let value of arr){
-//     console.log(value);
+// const copy = obj; //произошло передача по ссылке не КОПИРЫВАНИЕ
+// copy.a = 10;
+// console.log(obj);
+// console.log(copy);
+
+//Поверхностное копирывание с помощью цыкла
+// function copy(mainObj){
+//     let objCopy = {};
+//     let key;
+//     for (key in mainObj){
+//         objCopy[key] = mainObj[key];
+//     }
+//     return objCopy;
 // }
-//Метод for Each
-arr.forEach(function(item, i, arr){
-    console.log(`${i}: ${item} внутри массива ${arr}`);
-});
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// }
+// const newNumbers = copy(numbers);
+// newNumbers.a = 10; //проверка копирования верхнего уровня
+// newNumbers.c.x = 11; //проверка копирования глубокого уровня - УБЕЖДАЕМСЯ что получилась ссылка а не копия!!!
+// console.log(numbers);
+// console.log(newNumbers);
+
+//Копирования массива, метод slice
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
+// newArray[1] = 'adsa';
+// console.log(oldArray);
+// console.log(newArray);
+
+// Опрератор разворота spred ... делает копирование массива ES6, копирования объекта ES8
+// const video = ['Youtube', 'Vimeo', 'Rutube'],
+//       blogs = ['Wordpress', 'LiveJournal', 'Bloger'],
+//       internet = [...video, ...blogs, 'Vk', 'Facebook'];
+// console.log(internet);
+
+
+// //Оператор разворота в функции - копирования данных с массива в функцию
+// function logServera(a, b, c){
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+// const num = [2, 5, 7];
+// logServera(...num);
+
+//Копирования объекта - опретор разворота - ПОВЕРХНОСТНАЯ КОПИЯ
+const bTest = {
+    one: 1,
+    two: 2
+}
+const newBtest = {...bTest};
+newBtest.d = 'D';
+console.log(bTest);
+console.log(newBtest);
+
+
+
