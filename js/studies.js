@@ -153,6 +153,17 @@
 // showFamily(family);
 
 
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+    arrNew = [];
+    arr.forEach(item => {
+        arrNew += `${item}`;
+    });
+
+    return console.log(arrNew);
+}
+standardizeStrings(favoriteCities);
 
 
 
