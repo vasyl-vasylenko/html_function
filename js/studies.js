@@ -89,3 +89,85 @@
 //     return console.log(result);
 // }
 // fib(7);
+
+
+// 1 Напишите функцию showExperience, которая будет принимать в себя объект со всеми данными и возвращать строку с опытом.
+// 2 Напишите функцию showProgrammingLangs, которая будет принимать в себя объект со всеми данными и возвращать строку в нужном виде.
+    //showProgrammingLangs(personalPlanPeter)  =>
+    //"Язык js изучен на 20% Язык php изучен на 10%"
+    //Причем функция должна работать вне зависимости от количества языков. Если ни один не указан, то возвращается пустая строка.
+// 3 Создайте метод showAgeAndLangs внутри объекта personalPlanPeter. При его вызове метод будет принимать в себя объект и возвращать строку в нужном виде. 
+//Задание 1
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%', 
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     },
+//     showAgeAndLangs: function(plan){
+//        //str = `Мне ${this.age} и владею языками: ${this.skills.languages[0].toUpperCase()} ${this.skills.languages[1].toUpperCase()}`;
+//        // метод перебора
+//        let str = '';
+//        str = `Мне ${personalPlanPeter.age} и владею языками: `
+//        this.skills.languages.forEach(function(lang) {
+//         str += `${lang.toUpperCase()} `;
+//        });
+//         return str;
+//     } 
+// };
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+// // Задание 2
+// function showExperience(){
+//      const preriod = `${personalPlanPeter.skills.exp}`;
+//      return preriod;
+// }
+// console.log(showExperience(personalPlanPeter));
+
+// // Задание 3
+// function showProgrammingLangs(plan) {
+//         const {programmingLangs} = plan.skills; // ключ с объекта programmingLangs 
+//         let stringSkills = '';
+//         for(let i in programmingLangs){
+//             stringSkills += `Язык ${i} изучен на ${programmingLangs[i]}\n`;
+//         }
+//     return stringSkills;
+// }
+// console.log(showProgrammingLangs(personalPlanPeter));
+
+
+// // //1) Напишите функцию showFamily, которая будет принимать в себя массив строк и возвращать сообщение в нужном формате
+// const family =  ['Peter', 'Ann', 'Alex', 'Linda'];
+// function showFamily(arr) {
+//     let str = '';
+//     arr.length === 0 ? str = `Семья пуста` : str = `Семья состоит из: `;
+//     arr.forEach(item =>{
+//         str += `${item} `;
+//     });
+//     return str
+// }
+// showFamily(family);
+
+
+
+
+
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+// function showFamily(arr) {
+//     let str = '';
+
+//     arr.length === 0 ? str = 'Семья пуста' : str = 'Семья состоит из: ';
+
+//     arr.forEach(member => {
+//         str += `${member} `
+//     });
+
+//     return console.log(str);
+// }
+
+// showFamily(family);
