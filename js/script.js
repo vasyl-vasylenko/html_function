@@ -1,66 +1,69 @@
 "use strict";
 
 
-//Фильм
+//Фильм - один большой объект со своими свойствами и методами
+// классический переключатель toggler false/true
+const personalMovieDB = {
+    count: 0,
+    movies: {},
+    actors: {},
+    geners: [],
+    privat: false,
+    start: function(){
+        while(personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)){
+            personalMovieDB.count = +prompt('Сколько фильмов вы смотрели?', '').trim();
+        }
+    },
+    rememberMyFilms: function(){
+        for (let i = 0; i < 2; i++){
+            const a = prompt('Один из последних просмотренных фильмов', ''),
+                b = prompt('На сколько его оцените?', '');
+            if ( a != null && b != null && a != '' && b != '' && a.length < 50 ) {
+                personalMovieDB.movies[a] = b;
+                console.log('done');
+            } else {
+                console.log('error');
+                i--;
+            }
+        }
+    },
+    detectPersonalLevel: function(){
+        if (personalMovieDB.count < 10) {
+            console.log("Вы просмотрели мало фильмов");
+        } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+            console.log("Вы класиче аий зритель");
+        } else if (personalMovieDB.count > 30){
+            console.log("Вы кирноман");
+        }else {
+            console.log("Произошла ошибка");
+        }
+    },
+    showMyDB: function(hidden){
+        if (!hidden){
+            console.log(personalMovieDB);
+        }
+    },
+    toggleVisibleMyDB: function(){
+        if(personalMovieDB.privat){
+            personalMovieDB.privat = false;
+        } else {
+            personalMovieDB.privat = true;
+        }
+    },
+    writeYourGeners: function(){
+        for (let i = 1; i <= 3; i++){
+            personalMovieDB.geners[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+        }
+    }
+};
 
-// let numberOfFilms;
-// function start(){
-//     while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-//         numberOfFilms = +prompt('Сколько фильмов вы смотрели?', '').trim();
-//     }
-// }
-// start();
 
-// const personalMovieDB = {
-//       count: numberOfFilms,
-//       movies: {},
-//       actors: {},
-//       geners: [],
-//       privat: false
-// };
 
-// function rememberMyFilms(){
-//     for (let i = 0; i < 2; i++){
-//         const a = prompt('Один из последних просмотренных фильмов', ''),
-//             b = prompt('На сколько его оцените?', '');
-//         if ( a != null && b != null && a != '' && b != '' && a.length < 50 ) {
-//             personalMovieDB.movies[a] = b;
-//             console.log('done');
-//         } else {
-//             console.log('error');
-//             i--;
-//         }
-//     }
-// }
-// // rememberMyFilms();
 
-// function detectPersonalLevel(){
-//     if (personalMovieDB.count < 10) {
-//         console.log("Вы просмотрели мало фильмов");
-//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-//         console.log("Вы класиче аий зритель");
-//     } else if (personalMovieDB.count > 30){
-//         console.log("Вы кирноман");
-//     }else {
-//         console.log("Произошла ошибка");
-//     }
-// }
-// // detectPersonalLevel();
 
-// function showMyDB (hidden){
-//     if (!hidden){
-//         console.log(personalMovieDB);
-//     }
-// }
 
-// showMyDB(personalMovieDB.privat);
 
-// function writeYourGeners(){
-//     for (let i = 1; i <= 3; i++){
-//         personalMovieDB.geners[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-//     }
-// }
-// writeYourGeners();
+// Площадь куба 
 // function calculateVolumeAndArea(length) {
 //     if (typeof (length) !== 'number' || length < 0 || !Number.isInteger(length)) {
 //         return "При вычислении произошла ошибка";
@@ -278,15 +281,29 @@
 // const num = [2, 5, 7];
 // logServera(...num);
 
-//Копирования объекта - опретор разворота - ПОВЕРХНОСТНАЯ КОПИЯ
-const bTest = {
-    one: 1,
-    two: 2
-}
-const newBtest = {...bTest};
-newBtest.d = 'D';
-console.log(bTest);
-console.log(newBtest);
+// //Копирования объекта - опретор разворота - ПОВЕРХНОСТНАЯ КОПИЯ
+// const bTest = {
+//     one: 1,
+//     two: 2
+// }
+// const newBtest = {...bTest};
+// newBtest.d = 'D';
+// console.log(bTest);
+// console.log(newBtest);
+
+
+// // ОПП JS, протипно-ориентированое наследие
+//  const solider = {
+//     healt: 400,
+//     armer: 100
+//  };
+//  const john = {
+//     healt: 200
+//  };
+//  john.__proto__ = solider;
+//  console.log(john);
+//  console.log(john.armer);
+
 
 
 

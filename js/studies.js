@@ -140,33 +140,7 @@
 // console.log(showProgrammingLangs(personalPlanPeter));
 
 
-// // //1) Напишите функцию showFamily, которая будет принимать в себя массив строк и возвращать сообщение в нужном формате
-// const family =  ['Peter', 'Ann', 'Alex', 'Linda'];
-// function showFamily(arr) {
-//     let str = '';
-//     arr.length === 0 ? str = `Семья пуста` : str = `Семья состоит из: `;
-//     arr.forEach(item =>{
-//         str += `${item} `;
-//     });
-//     return str
-// }
-// showFamily(family);
-
-
-const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
-
-function standardizeStrings(arr) {
-    arrNew = [];
-    arr.forEach(item => {
-        arrNew += `${item}`;
-    });
-
-    return console.log(arrNew);
-}
-standardizeStrings(favoriteCities);
-
-
-
+// //1) Напишите функцию showFamily, которая будет принимать в себя массив строк и возвращать сообщение в нужном формате
 // const family = ['Peter', 'Ann', 'Alex', 'Linda'];
 
 // function showFamily(arr) {
@@ -180,5 +154,53 @@ standardizeStrings(favoriteCities);
 
 //     return console.log(str);
 // }
-
 // showFamily(family);
+
+
+// // напишите функцию standardizeStrings, которая будет принимать в себя массив строк и будет выводить в консоль эти строки в нижнем регистре.
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+// function standardizeStrings(arr) {
+//     arr.forEach(city => {
+//         console.log(city.toLowerCase())
+//     })
+// }
+// standardizeStrings(favoriteCities);
+
+
+
+// // Задача с собеседований. Напишите функцию reverse, которая принимает в себя строку и возвращает эту строку в обратном порядке.
+// const someString = 'This is some strange string';
+// let newArr = '';
+// function reverse(str) {
+//     if(typeof(str) !== 'string'){
+//         return "Ошибка!";
+//     } 
+//     return  newArr = [...str].reverse().join('');
+// }
+// reverse(someString);
+// console.log(newArr);
+
+
+// // Представьте такую реальную ситуацию. У вас есть банкомат, который выдает деньги из двух разных 
+// //банков в разных валютах. Один банк основной с базовыми валютами, второй дополнительный с 
+// //прочими валютами: const baseCurrencies = ['USD', 'EUR']; const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// // Вам нужно создать главную функцию банкомата availableCurr, которая принимает два аргумента: первый - это массив со всеми доступными валютами из двух банков сразу (сейчас представим, что они не могут повторяться), второй - необязательный аргумент, который указывает ту валюту, которая сейчас закончилась в банкомате. Если массив в первом аргументе пустой - то функция возвращает строку 'Нет доступных валют'. Функция возвращает строку в нужном виде.
+// // Пример: availableCurr(['UAH', 'RUB', 'CNY'], 'CNY') Вернет строку:
+// // Доступные валюты:
+// // UAH
+// // RUB
+// // Заметьте: CNY (юань) исчез из списка валют, значит такая валюта закончилась
+// // После валюты: стоит перенос строки \n, и после каждой валюты тоже. Это важно для тестов
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// function availableCurr(arr, missingCurr) {
+//     let srt = '';
+//     arr.lenght === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n'
+//     arr.forEach(function(curr, i){
+//         if (curr !== missingCurr){
+//             str += `${curr}\n`;
+//         }
+//     });
+//     return console.log(str);
+// }
+// availableCurr(['UAH', 'RUB', 'CNY'], 'CNY');
