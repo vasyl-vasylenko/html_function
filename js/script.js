@@ -58,9 +58,18 @@ const personalMovieDB = {
 };
 
 
-
-
-
+const personalMovieDB = {
+    count: 0,
+    movies: {},
+    actors: {},
+    geners: [],
+    privat: false,
+    showMyDB: function(hidden){
+        if (!hidden){
+            console.log(personalMovieDB);
+        }
+    }
+};
 
 
 // Площадь куба 
