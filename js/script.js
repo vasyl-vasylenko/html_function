@@ -51,25 +51,31 @@ const personalMovieDB = {
         }
     },
     writeYourGeners: function(){
-        for (let i = 1; i <= 3; i++){
-            personalMovieDB.geners[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+        // for (let i = 1; i <= 3; i++){
+        //     let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+        //     if(genre === '' || genre == null){
+        //         console.log('Вы ввели некорректные данные или не ввели их вовсе');
+        //          i--; // откат на одну итерацию назад
+        //     } else {
+        //         personalMovieDB.geners[i - 1] = genre;
+        //     }
+        // }
+        for (let i = 1; i < 2; i++){ // переделан счет, все жанры через запятую, по этому достаточно одной итерации
+            let genresFilms = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase(); // toLowerCase() превращает всю строку с маленькой буквы, что позводи правильно отсортировать массив в алфавитном порядке
+            if(genresFilms === '' || genresFilms == null){
+                console.log('Вы ввели некорректные данные или не ввели их вовсе');
+                 i--; // откат на одну итерацию назад
+            } else {
+                personalMovieDB.geners = genresFilms.split(', '); // разбивает строку массива через определенный разделитель
+                personalMovieDB.geners.sort(); //сортировка по алфавиту
+            }
         }
+        personalMovieDB.geners.forEach((item, i) => {
+            console.log(`Любимый жанр ${i + 1} - это ${item}`); // i + 1 чтоб отсчет был не с нуля
+        });
     }
 };
 
-
-const personalMovieDB = {
-    count: 0,
-    movies: {},
-    actors: {},
-    geners: [],
-    privat: false,
-    showMyDB: function(hidden){
-        if (!hidden){
-            console.log(personalMovieDB);
-        }
-    }
-};
 
 
 // Площадь куба 

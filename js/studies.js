@@ -204,3 +204,144 @@
 //     return console.log(str);
 // }
 // availableCurr(['UAH', 'RUB', 'CNY'], 'CNY');
+
+
+// У вас есть небольшой кусочек данных о торговом центре, которые записаны в объекте shoppingMallData. Они содержат массив с данными о магазинах, где указана длина и ширина помещения; высоту помещения; стоимость отопления за 1 кубический метр и бюджет на оплату отопления за месяц.
+//Основная задача - это написать функцию isBudgetEnough, которая буде возвращать строку. Если бюджета хватает для отопления всего объема торгового центра - выводится 'Бюджета достаточно', если нет - 'Бюджета недостаточно'.
+// const shoppingMallData = {
+//     shops: [
+//         {
+//             width: 10,
+//             length: 5
+//         },
+//         {
+//             width: 15,
+//             length: 7
+//         },
+//         {
+//             width: 20,
+//             length: 5
+//         },
+//         {
+//             width: 8,
+//             length: 10
+//         }
+//     ],
+//     height: 5,
+//     moneyPer1m3: 30,
+//     budget: 50000
+// }
+// function isBudgetEnough(data) {
+//     let totalVolumeStores = 0;
+//     let shopArea = 0;
+//     data.shops.forEach((item) => {
+//         shopArea += item.width * item.length; 
+//     });
+//     totalVolumeStores = shopArea * data.height;
+
+//     if(data.budget - (totalVolumeStores * data.moneyPer1m3) >= 0 ){
+//         return console.log('Бюджета достаточно');
+//     } else {
+//         return console.log('Бюджета недостаточно');
+//     }
+// }
+// isBudgetEnough(shoppingMallData);
+
+
+
+// //У вас есть список учеников, которые хотят поиграть в игру: const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+// //Но команд может быть только 3 по 3 человека. Напишите функцию sortStudentsByGroups, которая принимает в себя массив строк.
+// //Внутри она сначала сортирует имена по алфавиту. Затем распределяет учеников по 3 человека в 3 группы по алфавитному порядку. Эти группы должны быть массивами. Как итог, функция возвращает новый массив с тремя командами и строкой как 4й элемент.
+// //Пример: sortStudentsByGroups(students)  =>[
+//     //   [ 'Andrew', 'Ann', 'Bernard' ],
+//     //   [ 'Cris', 'Josh', 'Mark' ],
+//     //   [ 'Peter', 'Sam', 'Sandra' ],
+//     //   'Оставшиеся студенты: Takesi'
+//     // ]
+// //Если убрать одно студента из списка, то результат будет:[
+//     //   [ 'Andrew', 'Ann', 'Bernard' ],
+//     //   [ 'Cris', 'Josh', 'Mark' ],
+//     //   [ 'Peter', 'Sam', 'Sandra' ],
+//     //   'Оставшиеся студенты: -'
+//     // ]
+// // А если добавить одного, то:[
+// //       [ 'Andrew', 'Ann', 'Bernard' ],
+// //       [ 'Cris', 'Josh', 'Mark' ],
+// //       [ 'Peter', 'Sam', 'Sandra' ],
+// //       'Оставшиеся студенты: Takesi, Somebody'
+// //     ]
+// //То есть, меняется содержимое строки. Все оставшиеся ученики попадают туда.
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+// function sortStudentsByGroups(arr) {
+//     arr.sort();
+//     const arrOne = [], 
+//         arrTwo = [], 
+//         arrThere = [],
+//         arrRest = [];
+//     for( i = 0; i < arr.length; i++){
+//         if ( i < 3){
+//             arrOne.push(arr[i]);
+//         } else if ( i < 6 ){
+//             arrTwo.push(arr[i])
+//         } else if ( i < 9){
+//             arrThere.push(arr[i]);
+//         } else {
+//             arrRest.push(arr[i]);
+//         }
+//     }
+//     return [arrOne,arrTwo, arrThere, `Оставшиеся студенты: ${arrRest.length === 0 ? '-' : arrRest.join(', ')}`]
+// }
+// sortStudentsByGroups(students);
+
+
+
+const restorantData = {
+    menu: [
+        {
+            name: 'Salad Caesar',
+            price: '14$'
+        },
+        {
+            name: 'Pizza Diavola',
+            price: '9$'
+        },
+        {
+            name: 'Beefsteak',
+            price: '17$'
+        },
+        {
+            name: 'Napoleon',
+            price: '7$'
+        }
+    ],
+    waitors: [
+        {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    ],
+    averageLunchPrice: '20$',
+    openNow: true
+};
+
+function isOpen(prop) {
+    let answer = '';
+    prop === false ? answer = 'Закрыто' : answer = 'Открыто';
+
+    return answer;
+}
+console.log(isOpen(restorantData.openNow));
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+    if (((+fDish.price.slice(0, -1)) + (+sDish.price.slice(0, -1))) < +average.slice(0, -1)) {
+        return 'Цена ниже средней';
+    } else {
+        return 'Цена выше средней';
+    }
+}
+
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+function transferWaitors(data) {
+    const copy = Object.assign({}, data);
+    copy.waitors = [{name: 'Mike', age: 32}, ...copy.waitors];
+    return copy;
+}
+console.log(transferWaitors(restorantData));
